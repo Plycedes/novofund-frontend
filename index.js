@@ -5,6 +5,7 @@ const connectButton = document.getElementById("connect-button");
 const fundButton = document.getElementById("fund-button");
 const withdrawButton = document.getElementById("withdraw-button");
 const balanceButton = document.getElementById("balance-button");
+const balanceText = document.getElementById("balance-text");
 
 connectButton.onclick = connect;
 fundButton.onclick = fund;
@@ -65,9 +66,12 @@ async function withdraw() {
         const signer = provider.getSigner();
         const contract = new ethers.Contract(contractAddress, abi, signer);
 
-        const transactionResponse = await contract.withdraw();
-        await transactionResponse.wait(1);
-        console.log("Successful");
+        try {
+            const transactionResponse = await contract.withdraw();
+            await listenForTransactionMine(transactionResponse, provider);
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
@@ -75,12 +79,9 @@ async function balance() {
     console.log("Showing contract balance");
     if (typeof window.ethereum !== "undefined") {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
-        const contract = new ethers.Contract(contractAddress, abi, signer);
+        const balance = await provider.getBalance(contractAddress);
+        console.log(ethers.utils.formatEther(balance));
 
-        let balance = await contract.provider.getBalance(contract.address);
-        balance /= 1000000000000000000;
-        //await transactionResponse.wait(1);
-        console.log(balance.toString());
+        balanceText.innerHTML = ethers.utils.formatEther(balance);
     }
 }
