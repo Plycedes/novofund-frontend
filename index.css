@@ -1,0 +1,79 @@
+body {
+    display: flex;
+    background-color: rgb(0, 0, 0);
+}
+
+.form {
+    height: 300px;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 35px 35px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(121, 246, 255);
+}
+
+#connect-button {
+    width: 230px;
+    font-size: 20px;
+    background-color: rgb(23, 194, 206);
+    border-radius: 5px;
+    border-width: 0px;
+}
+
+#ethAmount {
+    width: 222px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#fund-button {
+    font-size: 20px;
+    width: 113px;
+    background-color: rgb(23, 194, 206);
+    border-radius: 5px;
+}
+
+#withdraw-button {
+    font-size: 20px;
+    width: 113px;
+    background-color: rgb(23, 194, 206);
+    border-radius: 5px;
+}
+
+#balance-button {
+    width: 230px;
+    font-size: 20px;
+    background-color: rgb(23, 194, 206);
+    border-radius: 5px;
+}
+
+#balance-text {
+    width: 230px;
+    font-size: 20px;
+    color: rgb(23, 194, 206);
+}
+
+.mid {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mid-half {
+    padding-top: 3px;
+}
+
+.label-div {
+    padding-top: 5px;
+}

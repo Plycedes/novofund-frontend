@@ -2,17 +2,26 @@
 <html lang="en">
     <head>
         <title>NovoFund</title>
+        <link rel="stylesheet" type="text/css" href="index.css" />
     </head>
     <body>
-        <script src="./index.js" type="module"></script>
-        <button id="connect-button">Connect</button>
+        <div class="form">
+            <h1>Novofund</h1>
+            <script src="./index.js" type="module"></script>
+            <button id="connect-button">Connect</button>
 
-        <input id="ethAmount" placeholder="ETH Amount" />
-        <button id="fund-button">Fund</button>
+            <div class="mid">
+                <input id="ethAmount" placeholder="ETH Amount" />
+                <div class="mid-half">
+                    <button id="fund-button">Fund</button>
+                    <button id="withdraw-button">Withdraw</button>
+                </div>
+            </div>
 
-        <button id="withdraw-button">Withdraw</button>
-
-        <button id="balance-button">Balance</button>
-        <label id="balance-text"></label>
+            <button id="balance-button">Balance</button>
+            <div class="label-div">
+                <label id="balance-text"></label>
+            </div>
+        </div>
     </body>
 </html>
